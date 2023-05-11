@@ -1,0 +1,43 @@
+form {
+   display: flex;
+   width: fit-content;
+   flex-direction: column;
+}
+
+.form-hero-inscription {
+   display: flex;
+   justify-content: center;
+}
+
+::placeholder {
+   text-align: center;
+}
+
+legend {
+   text-align: center;
+}
+
+.buttonSubmit {
+   margin-top: 10px;
+}
+
+.typeIncident {
+   margin-top: 10px;
+   border: 1px solid green;
+   border-radius: 5px;
+   padding: 3px;
+}
+
+.levels {
+   display: flex;
+   flex-direction: column;
+}
+
+.level-slide {
+   width: 50%;
+}
+
+.level-title {
+   font-size: 12px;
+   font-weight: 700;
+}

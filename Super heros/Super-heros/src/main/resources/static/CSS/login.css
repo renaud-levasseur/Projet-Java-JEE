@@ -1,0 +1,22 @@
+form {
+   display: flex;
+   width: fit-content;
+   flex-direction: column;
+}
+
+.form-hero {
+   display: flex;
+   justify-content: center;
+}
+
+::placeholder {
+   text-align: center;
+}
+
+legend {
+   text-align: center;
+}
+
+.buttonSubmit {
+   margin-top: 10px;
+}

@@ -1,0 +1,48 @@
+body {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+html {
+   height: 100%;
+}
+
+.head {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   padding: 5px;
+   background-color: rgb(32,33,36);
+}
+
+.hero {
+   color: white;
+   font-size: 20px;
+   font-weight: 500;
+}
+
+.incidentButton {
+   margin-left: 5px;
+}
+
+.heroBackground {
+   background-size: cover;
+   display: flex;
+   width: 100%;
+}
+
+footer {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   margin-top: auto;
+   height: 50px;
+   background-color: rgb(32,33,36);
+}
+
+.footer-citation {
+   color: white;
+   font-size: 20px;
+   font-weight: 500;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+   
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Super Héros</title>
+      <link rel="stylesheet" href="/CSS/home.css">
+      <link rel="stylesheet" href="/CSS/register.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+              integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+              crossorigin="anonymous">
+      </script>
+      <script src="../static/JS/app.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">  
+   </head>
+
+   <body>
+      <header th:replace="home.html :: header"></header>
+
+      <div class="form-hero-inscription">
+         <form method="post" action="/createHero">
+            <legend>Création compte héros</legend>
+            <!-- Name -->
+            <label for="nameHero">Nom Héros</label>
+            <input placeholder="Votre nom heros" type="text" id="nameHero" name="nameHero">
+
+            <!-- Number Phone -->
+            <label for="phoneHero">Numéro de téléphone</label>
+            <input placeholder="Votre numéro de téléphone" id="phoneHero" name="phoneHero" required>   
+            <hr/>
+
+            <!-- Password -->                  
+            <label for="passwordHero">Mot de passe</label>
+            <input placeholder="Mot de passe heros" type="password" id="passwordHero" name="passwordHero">
+            <hr/>
+
+            <!-- City Hero -->
+            <label for="cityHero">Votre ville</label>
+            <input placeholder="Ville heros" id="cityHero" name="cityHero">
+            <hr/>
+            
+            <!-- Type Incident -->
+            <div class="typeIncident">
+               <h5>Type d'incidents maîtrisés (min 3, max 6):</h5>
+               <div th:each="typeIncident : ${types}">
+                  <label th:text="${typeIncident.name}"></label>
+                  <input type="checkbox" name="incidents" th:value="${typeIncident.id}" min="3" max="6">
+                  <div class="levels">
+                     <label class="level-title">Niveau de maîtrise (min 1, max 3):</label>
+                     <input class="level-slide" type="range" min="1" max="3" name="levels" value="1" step="1" oninput="rangeLvl.innerText = this.value">
+                     <span id="rangeLvl">1</span>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Submit button -->
+            <input class="buttonSubmit" type="submit" value="Valider" name="submitRegister"/>
+
+            <p>Vous avez déjà un compte ?<a href="/login">&nbsp;Connectez-vous</a></p>
+
+         </form>
+   
+      </div>
+
+      <footer th:replace="home.html :: footer"></footer>
+
+   </body>
+
+</html>
